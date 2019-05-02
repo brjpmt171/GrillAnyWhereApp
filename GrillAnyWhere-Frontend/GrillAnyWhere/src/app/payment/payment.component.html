@@ -1,0 +1,161 @@
+<nav class="navbar navbar-expand bg-dark navbar-dark sticky-top">
+    <div class="container">
+   
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+   
+      <a class="navbar-brand" href="#">
+          <img src="https://www.colourbox.com/preview/6809286-grill.jpg
+   https://www.colourbox.com/preview/6809286-grill.jpg
+   " width="160px" height="30px" alt="" style="margin-left:-200px">
+        </a>
+   
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <h5 style="color:white">GRILL ANYWHERE</h5>
+        
+        <ul class="navbar-nav ml-auto" id="menu">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" routerLink="/renter-dashboard">Home
+   
+            </a>
+          </li>
+          <li></li>
+   
+          <li class="nav-item">
+   
+            <a class="nav-link" href="#" routerLink="/manual">Manual</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/automatic">Automatic</a>
+          </li>
+
+         <li>
+           
+         </li>
+          
+   
+          
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   
+            <button type="submit" (click)="logout()" style="width:70px" class="btn btn-secondary">LogOut</button>
+   
+   
+   
+   
+   
+   
+        </ul>
+      </div>
+    </div>
+   </nav>
+  
+<br><br>
+
+    <div class="container-fluid ">
+  <br/><br/>
+  
+    <div *ngIf="!ownerDetails " class="row justify-content-md-center">
+     <div class="card"  style="width: 30rem;">
+      <div class="card-header text-center text-white bg-primary">
+        <h4>Booking and Payment Section</h4>
+        
+      </div>
+        <div class="card-body">
+          <form [formGroup]="userForm" novalidate (submit)="save()">
+            <div class="formgroup">
+              <label for="name">Delivary to</label>
+              <input type="text" formControlName="name" name="name" placeholder="Give Your Full Name ..." class='form-control input' [ngClass]="{ 'is-invalid': submitted && userForm.controls['name'].errors }" style="width:400px;"/>
+            
+              <div *ngIf="submitted && userForm.controls['name'].errors" class="invalid-feedback">
+                  <div *ngIf="userForm.controls['name'].errors.required">Name is required</div>
+              </div>
+            </div>
+
+          
+
+            <div class="form-group">
+              <label for="address">Landmark</label>
+              <textarea rows="3" formControlName="address"
+               name="address" placeholder="Give Full Address ..."
+                class='form-control input' [ngClass]="{ 'is-invalid': submitted && userForm.controls['address'].errors }" style="width:400px;"></textarea>
+                <div *ngIf="submitted && userForm.controls['address'].errors" class="invalid-feedback">
+                    <div *ngIf="userForm.controls['address'].errors.required">Address is required</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phn_no">Contact Number</label>
+              <input type="number" formControlName="phn_no" name="phn_no"
+               placeholder="Give Your Mobile No ..." class='form-control input' [ngClass]="{ 'is-invalid': submitted && userForm.controls['phn_no'].errors }" style="width:400px;" />
+               <div *ngIf="submitted && userForm.controls['phn_no'].errors" class="invalid-feedback">
+                  <div *ngIf="userForm.controls['phn_no'].errors.required">Contact Number is required</div>
+              </div>
+            </div>
+
+           <div class="form-group">
+              <label for="phn_no">Time Period</label>
+              <select class='form-control input' #period id="timePeriods" (change)="periodDropDown(period.value)" style="width:200px;">
+                  <option>Select Period</option>
+                  <option value="1">1 Hour</option>
+                  <option value="2">2 Hour</option>
+                  <option value="3">3 Hour</option>
+                  <option value="4">4 Hour</option>
+                  <option value="5">5 Hour</option>
+                  <option value="6">6 Hour</option>
+                  <option value="7">7 Hour</option>
+                  <option value="8">8 Hour</option>
+                  <option value="9">9 Hour</option>
+                  <option value="10">10 Hour</option>
+                  
+                </select>
+           </div>
+
+           <div *ngIf="showAmount" class="form-group" style="font-size:20px;font-style: italic;color: indianred">
+             <label> Please Pay Total Amount  :    </label><label> Rs.  {{totalAmount}}</label>
+           </div>
+           
+            <div class="form-group">
+            <input type="submit" value="Pay And Confirm" data-toggle="tab"  class="btn btn-primary btn-lg btn-block shadow-sm" (click)="showOwner()"
+           />
+          </div>   
+                    
+          </form>
+        </div>
+      </div>
+  </div>
+
+
+  <div  *ngIf="ownerDetails" class="container">
+   
+    <div class="card" style="height:300px;">
+      <div class="card-header  text-center text-white bg-primary"><h3>Payment Made succesfully</h3></div>
+      <div class="card-body text-center">
+        <h4>
+       Griller Owner Name: {{data.firstname}}<br>
+       <h3>For further queries</h3>
+       Email ID: {{data.email}}<br>
+        Contact Number : {{data.phone}}<br>
+      </h4>
+      </div> 
+      <div class="card-footer text-center text-white bg-primary">
+        <button class="btn btn-sm btn-primary text-white " routerLink="/renter-dashboard"><h3>ok</h3></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div *ngIf="showSuccess" id="confirmModal" role="dialog" class="center">
+    
+    
+             <h2>success</h2>
+             
+          
+          
+          
+         
+       
+  </div>
+  
+</div>

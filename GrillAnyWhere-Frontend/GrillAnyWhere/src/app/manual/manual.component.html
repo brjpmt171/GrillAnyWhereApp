@@ -1,0 +1,155 @@
+<nav class="navbar navbar-expand bg-dark navbar-dark sticky-top">
+  <div class="container">
+ 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    
+        <a class="navbar-brand" href="#">
+            <img src="https://www.colourbox.com/preview/6809286-grill.jpg
+     https://www.colourbox.com/preview/6809286-grill.jpg
+     " width="160px" height="30px" alt="" style="margin-left:-200px">
+          </a>
+     
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <h5 style="color:white">GRILL ANYWHERE</h5>
+     
+      <ul class="navbar-nav ml-auto" id="menu">
+        <li class="nav-item active">
+          <a class="nav-link" href="#" routerLink="/renter-dashboard">Home
+ 
+          </a>
+        </li>
+        <li></li>
+ 
+        <li class="nav-item">
+ 
+          <a class="nav-link" href="#" routerLink="/manual">Manual</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" routerLink="/automatic">Automatic</a>
+        </li>
+
+       <li>
+         
+       </li>
+        
+ 
+        
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+          <button type="submit" (click)="logout()" style="width:70px" class="btn btn-secondary">LogOut</button>
+ 
+ 
+ 
+ 
+ 
+ 
+      </ul>
+    </div>
+  </div>
+ </nav>
+
+ <body>
+
+ <div class="tab-content">
+  <!-- All products -->
+  <div id="allProducts" class="container tab-pane in active">
+    <br/>
+    
+    
+    <br /><br />
+    <div class="row">
+      <span id="grillerList" *ngFor="let success of grillers">
+        <div class="col-md-10">
+          <div class="product-grid2">
+            <div class="product-image2">
+              <a href="#">
+                <!-- <img class="card-img-top" src="assets/images/griller10.jpg" alt="Card image cap"> -->
+                <img class="pic-1" src="assets/images/{{success.grillImage}}">
+                <img class="pic-2" src="assets/images/{{success.grillImage}}">
+              </a>
+              <ul class="social">
+                <li><a data-tip="Quick View"
+                    (click)="grillerInfo(success.grillId,success.grillName,success.price,success.grillerDescriptions,success.grillerType,success.location,success.grillImage)"
+                    href="#grillerInfoModal" data-toggle="tab"><i class="fa fa-eye"></i></a></li>
+
+                <li></li>
+              </ul>
+              <a class="add-to-cart" (click)="grillerInfo(success.grillId,success.grillName,success.price,success.grillerDescriptions,success.grillerType,success.location,success.grillImage)"
+              href="#grillerInfoModal" data-toggle="collapse" data-target="#grillerInfoModal">Rent Now</a>
+            </div>
+            <div class="product-content text-success">
+              <h3 class="title"><a href="#" class="text-warning" >{{success.grillName}}</a></h3>
+              <div><span class="price text-primary">Rent (per hr.) : INR{{success.price}}</span></div>
+              <span >{{success.location}}</span><br>
+              <span class="text-primary">{{success.grillerType}}</span>
+            </div>
+          </div>
+        </div>
+      </span>
+
+    </div>
+  </div>
+
+  
+    
+  
+
+  <!-- Modal -->
+  <div id="grillerInfoModal" class="container collapse">
+    <br/><br/>
+    
+    <div class="row">
+
+      <div class="col-lg-4">
+        <img class="card-img-top image" src="assets/images/{{grillImage}}" alt="Card image cap">
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <h3>{{grillName}}</h3>
+          </div>
+          <div class="card-body">
+            <br />
+            <p>Type : {{grillerType}}</p>
+            <p>Rent (per hr.) : {{price}}</p>
+            <p>Available in : {{location}}</p>
+            <p>Description : {{grillerDescriptions}}</p>
+          </div>
+
+          <div class="card-footer">
+              
+              <button id="rentBtn" class="btn btn-lg btn-block btn-primary" (click)="rentGriller(grillId,grillName,price,grillerDescriptions,grillerType,location,grillImage)">RENT NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+<!-- payment -->
+  <div id="payment" class="container collapse">
+   
+
+    <button type="submit" class="btn btn-lg btn-block btn-secondary" (click)="rentGriller(success.grillName,success.price,success.grillerDescriptions,success.grillerType,success.location,success.grillImage)">Continue</button>
+             
+  </div>
+
+  <div id="myCart" class="container tab-pane">
+    <div class="row">
+      <div class="col-md-6">
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+</body>

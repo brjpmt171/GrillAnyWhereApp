@@ -1,0 +1,281 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" />
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+  <title>Welcome to GrillAnyWhere</title>
+</head>
+
+<body>
+  <div class="fixed-top">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      
+    <div class="container">
+      <a href="index.html" class="navbar-brand">GRILL ANYWHERE</a>
+      
+      
+      
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          
+         
+         
+          <!-- <li class="searchbar">
+            <input type="text" #search id="searchbar-input" (keyup)="searchBarFilter(search.value)" >
+            <i class="fa fa-search" id="searchbar-icon" aria-hidden="true"></i>
+            <i class="fa fa-times" id="searchbar-cross" aria-hidden="true"></i>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+          <li>
+              <!-- <select #dropDown id="dropDown-input" (change)="dropDownFilter(dropDown.value)">
+                  <option>Choose City</option>
+                  <option value="Bangalore">Bangalore</option>
+                  <option value="Chennai">Chennai</option>
+                  <option value="Mumbai">Mumbai</option>
+                </select> -->
+          </li>
+          <li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </li>
+          <button type="button" class="btn btn-info btn-lg" routerLink="/login" style="margin-right:-5px;">
+          Login/Register
+          </button>
+          <li>
+            &nbsp;&nbsp;
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+  <!-- SHOWCASE SLIDER -->
+  <section id="showcase">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item carousel-image-1 active">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5">
+            
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-2">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block mb-5">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-image-3">
+          <div class="container">
+            <div class="carousel-caption d-none d-sm-block text-right mb-5">
+            
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#myCarousel" data-slide="prev" class="carousel-control-prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+
+      <a href="#myCarousel" data-slide="next" class="carousel-control-next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </section>
+
+  <!--HOME ICON SECTION  -->
+  <section id="home-icons" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cog fa-3x mb-2"></i>
+          <h3>Explore on Grillers</h3>
+          <p>Explore on  various types of grillers</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cloud fa-3x mb-2"></i>
+          <h3> Grillers For Hire</h3>
+          <p>Hire  griller for some time period</p>
+        </div>
+        <div class="col-md-4 mb-4 text-center">
+          <i class="fas fa-cart-plus fa-3x mb-2"></i>
+          <h3>Making Order</h3>
+          <p>Choose your griller to hire</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME HEADING SECTION -->
+  <section id="home-heading" class="p-5">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-5">
+            <h1>Are You Ready To Rent Griller?</h1>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO SECTION -->
+  
+
+ 
+
+  <!-- PHOTO GALLERY -->
+  <div class="container">
+      <h1 class="text-center">Photo Gallery</h1>
+      <p class="text-center">Check out our Grillers</p>
+      <div class="row">
+          <span class="grillerList" *ngFor="let success of grillers">
+          <div class="col-md-6">
+              <div class="product-grid2">
+                  <div class="product-image2">
+                      <a href="#">
+                          <!-- <img class="card-img-top" src="assets/images/griller10.jpg" alt="Card image cap"> -->
+                          <img class="pic-1" src="assets/images/{{success.grillImage}}" >
+                          <img class="pic-2" src="assets/images/{{success.grillImage}}">
+                      </a>
+                      <ul class="social">
+                          <li><a href="#" data-tip="Quick View" (click)="grillerInfo(success.grillImage,success.grillName,success.price,success.grillerDescriptions,success.grillerType,success.location)" data-toggle="modal" data-target="#grillerInfoModal"><i class="fa fa-eye"></i></a></li>
+                          
+                          <li></li>
+                      </ul>
+                      <a class="add-to-cart" href="" routerLink="/renterLogin" (click)="setFlag()">Rent Now</a>
+                  </div>
+                  <div class="product-content">
+                      <h3 class="title"><a href="#">{{success.grillName}}</a></h3>
+                      <span class="price">Rent (per Day) : {{success.price}}</span>
+                  </div>
+              </div>
+          </div>
+        </span>
+
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller5.jpg" >
+        </div>
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller7.jpg" >
+        </div>
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller8.jpg" >
+        </div>
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller9.jpg" >
+        </div>
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller10.jpg" >
+        </div>
+        <div class="col-md-4">
+            <img class="pic-1" src="assets/images/griller11.jpg" >
+        </div>
+          
+      </div>
+  </div>
+  <hr>
+  
+
+
+  
+  
+
+  <!-- Modal -->
+<div id="grillerInfoModal" class="modal" role="dialog" >
+    
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            
+          <div class="modal-header bg-info">
+            <h3 class="offset-sm-4 text-warning">Griller Information</h3>
+          </div>
+          
+          <div class="modal-body">
+             <div class="row">
+               <div class="col-sm-6">
+                  <img class="card-img-top" src="assets/images/{{grillImage}}" alt="Card image cap">
+               </div>
+               <div class="col-sm-6">
+                 <div class="card">
+                   <div class="card-header">
+                      <h3>{{grillName}}</h3>
+                   </div>
+                   <div class="card-body">
+                     <br/>
+                     <p>Type : {{grillerType}}</p>
+                     <p>Rent (per hr.) : {{price}}</p>
+                     <p>Available in : {{location}}</p>
+                     <p>Description :  {{grillerDescriptions}}</p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+          </div>
+          
+          
+          <div class="modal-footer">
+              <!-- <button type="submit" class="btn btn-lg btn-block btn-secondary">ADD TO CART</button> -->
+              <button type="submit" id="rentBtn" class="btn btn-lg btn-block btn-primary" routerLink="/renterLogin" (click)="rentFunc()">RENT NOW</button>
+          </div>
+        </div>
+      </div>
+  </div>
+  
+
+  <!-- FOOTER -->
+  <footer id="main-footer" class="text-center p-4">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>Copyright &copy;
+            <span id="year"></span>team-hashTag</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  
+
+
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
+  <script>
+    // Get the current year for the copyright
+    
+
+  </script>
+</body>
+
+</html>
